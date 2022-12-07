@@ -10,9 +10,9 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 import java.util.Arrays;
 
-import net.sf.cglib.Enhancer;
-import net.sf.cglib.MethodInterceptor;
-import net.sf.cglib.MethodProxy;
+// import net.sf.cglib.Enhancer;
+// import net.sf.cglib.MethodInterceptor;
+// import net.sf.cglib.MethodProxy;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -197,13 +197,14 @@ public class AopProxy implements InvocationHandler {
 	private class CglibProxyFactory {
 
 		private Object createProxy() {
-			return Enhancer.enhance(config.getTarget().getClass(), config.getProxiedInterfaces(),
-				new MethodInterceptor() {
-					public Object intercept(Object handler, Method method, Object[] objects, MethodProxy methodProxy) throws Throwable {
-						return invoke(handler, method, objects);
-					}
-				}
-			);
+			// return Enhancer.enhance(config.getTarget().getClass(), config.getProxiedInterfaces(),
+			// 	new MethodInterceptor() {
+			// 		public Object intercept(Object handler, Method method, Object[] objects, MethodProxy methodProxy) throws Throwable {
+			// 			return invoke(handler, method, objects);
+			// 		}
+			// 	}
+			// );
+			return null;
 		}
 	}
 

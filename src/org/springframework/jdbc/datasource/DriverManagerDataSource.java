@@ -8,6 +8,8 @@ package org.springframework.jdbc.datasource;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.SQLFeatureNotSupportedException;
+import java.util.logging.Logger;
 
 /**
  * Implementation of SmartDataSource that configures a plain old JDBC Driver
@@ -135,4 +137,18 @@ public class DriverManagerDataSource extends AbstractDataSource implements Smart
 		return DriverManager.getConnection(url, username, password);
 	}
 
+	@Override
+	public <T> T unwrap(Class<T> iface) throws SQLException {
+		return null;
+	}
+
+	@Override
+	public boolean isWrapperFor(Class<?> iface) throws SQLException {
+		return false;
+	}
+
+	@Override
+	public Logger getParentLogger() throws SQLFeatureNotSupportedException {
+		return null;
+	}
 }
