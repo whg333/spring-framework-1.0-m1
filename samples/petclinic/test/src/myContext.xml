@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<!--
+  - Root application context definition for a test app that uses JDBC.
+  - Does not depend on web infrastructure or any web-specific classes!
+  -->
+  
+<beans>		
+
+<!-- ========================= GENERAL DEFINITIONS ========================= -->
+
+
+<!-- ========================= Start of PERSISTENCE DEFINITIONS ========================= -->
+  
+	<!-- petclinic primary Business Object : Default implementation -->
+	<bean id="myBean" class="whg.MyBean" />
+	<bean id="myConsole" class="org.springframework.context.support.ConsoleListener" />
+	<bean id="myListener" class="whg.MyListener" />
+	<bean id="thatListener" class="whg.BeanThatListens" />
+	
+<!-- ======= END of PERSISTENCE DEFINITIONS =============================-->
+
+</beans>
+
