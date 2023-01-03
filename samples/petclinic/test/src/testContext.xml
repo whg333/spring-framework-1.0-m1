@@ -28,27 +28,27 @@
              "dataSource" bean and edit the class of the "clinic" bean. -->
 
 	<!-- HSQL DataSource. -->
-	<!---->
+	<!--
   	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
     	<property name="driverClassName"><value>org.hsqldb.jdbcDriver</value></property>
     	<property name="url"><value>jdbc:hsqldb:hsql://localhost:9001</value></property>
     	<property name="username"><value>sa</value></property>
 		<property name="password"><value></value></property>
   	</bean>
-	<!---->
+	-->
    
 	<!-- MYSQL DataSource. -->
-	<!--
+	<!---->
   	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
     	<property name="driverClassName"><value>com.mysql.jdbc.Driver</value></property>
     	<property name="url"><value>jdbc:mysql://localhost:3306/petclinic</value></property>
-    	<property name="username"><value>pc</value></property>
-    	<property name="password"><value>pc</value></property>
+    	<property name="username"><value>root</value></property>
+    	<property name="password"><value>root</value></property>
   	</bean>
-	-->
+	<!---->
 
 	<!-- petclinic primary Business Object : Default implementation -->
-	<bean id="clinic" class="petclinic.jdbc.HsqlClinic">
+	<bean id="clinic" class="petclinic.jdbc.MysqlClinic">
     	<property name="dataSource"><ref bean="dataSource"/></property>
 	</bean>
 	
